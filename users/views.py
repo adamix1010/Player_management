@@ -1,5 +1,6 @@
-from django.shortcuts import render,  reverse
+from django.shortcuts import reverse
 from django.views.generic import CreateView
+
 from .forms import UserCreationForm
 
 
