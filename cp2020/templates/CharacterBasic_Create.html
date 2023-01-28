@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <hr>
+    <h1 class="cyberpunk">Create a new character</h1>
+    <h1>Create a new character</h1>
+    <form method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ form.as_p}}
+        <button>SUBMIT</button>
+    </form>
+{% endblock content %}
