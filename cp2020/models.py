@@ -28,7 +28,7 @@ class CharacterDetail(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    name = models.TextField(max_length=15)
+    name = models.CharField(max_length=15)
     role = models.TextField(choices=ROLES, default=SL)
     picture = models.ImageField(upload_to='pictures_storage/',
                                 height_field=None,
