@@ -15,8 +15,10 @@
         </div>
     </section>
     <section class="cyberpunk black">
+        <label for="number">Points left:</label>
+        <p id="number"></p>
       <div style="display:inline-block;vertical-align:top;">
-      <form style="max-width: 500px" method="post" enctype="multipart/form-data" >
+      <form id='p-form' style="max-width: 500px" method="post" enctype="multipart/form-data" >
          {% csrf_token %}
          {{ form }}
         <button type="submit" class="cyberpunk red">SUBMIT_</button>
@@ -25,11 +27,11 @@
           <img src="{% static 'AI_Picture.png' %}"  alt="" height="200" width="200" />
       </div>
       <div style="display:inline-block;vertical-align:top;">
-        <p class="cyberpunk inverse scannedv">
+        <p id="info-text" class="cyberpunk inverse scannedv">
             Welcome {{ request.user.username }}. Here you can define stats for {{ characterdetail.name }}
         </p>
       </div>
     </form>
     </section>
-
+        <script src="{% static 'CharacterBasicStats.js'%}"defer></script>
 {% endblock content %}

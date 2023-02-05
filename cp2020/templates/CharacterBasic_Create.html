@@ -1,6 +1,7 @@
 {% extends "baseCP.html" %}
 
 {% block content %}
+
     <hr>
     <h1 class="cyberpunk">Create a new character</h1>
     <section class="cyberpunk">
@@ -16,7 +17,8 @@
     </section>
     <section class="cyberpunk black">
       <div style="display:inline-block;vertical-align:top;">
-      <form style="max-width: 500px" method="post" enctype="multipart/form-data" >
+         <div id="img-box"></div>
+      <form id='p-form' style="max-width: 500px" method="post" enctype="multipart/form-data" >
          {% csrf_token %}
          {{ form }}
         <button type="submit" class="cyberpunk red">SUBMIT_</button>
@@ -31,5 +33,5 @@
       </div>
     </form>
     </section>
-
+        <script src="{% static 'CharacterBasicControl.js'%}"defer></script>
 {% endblock content %}
