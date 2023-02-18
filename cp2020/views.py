@@ -28,3 +28,13 @@ class BasicCharacterStatsView(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse("landing-page")
+
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.MA_Run = instance.stat_MA * 3
+        instance.MA_Leap = instance.MA_Run/3
+        instance.MA_Lift = instance.stat_BODY * 10
+        instance.EMP_Humanity = instance.stat_EMP * 10
+        instance.BODY_Save_Nr = instance.stat_BODY
+        instance.save()
+        return super(BasicCharacterStatsView, self).form_valid(form)

@@ -13,4 +13,7 @@ image.addEventListener('change', ()=>{
     console.log(url)
     imgBox.innerHTML = `<img src="${url}" width="50%">`
 })
+
+
+
 console.log(form)

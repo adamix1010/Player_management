@@ -59,7 +59,7 @@ select.cyberpunk,
   clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px)  calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px  calc(100% - 0px), 0% calc(100% - 10px));
   margin-bottom: 10px;
   padding: 12px;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   font-weight: 700;
   /*caret-shape: underscore;*/
 }
@@ -189,6 +189,12 @@ fieldset.cyberpunk {
   margin: 10px 0px;
 }
 
+.form-wrapper {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -858,7 +864,7 @@ h4.cyberpunk:after,
 button.cyberpunk,
 input[type=submit].cyberpunk, 
 a.cyberpunk {
-  --text: "R-25";
+  --text: "R-10";
   --background-color: var(--red-color);
   display: block;
   border: none;

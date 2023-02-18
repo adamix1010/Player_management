@@ -1,6 +1,6 @@
 from django.db import models
 from users.models import User
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class CharacterDetail(models.Model):
     SL = 'SOLO'
@@ -35,21 +35,37 @@ class CharacterDetail(models.Model):
                                 width_field=None,
                                 max_length=200,
                                 blank=True, null=True)
-    stat_INT = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_REF = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_TECH = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_COOL = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_ATTR = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_LUCK = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_MA = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_BODY = models.DecimalField(max_digits=2, decimal_places=0, default=0)
-    stat_EMP = models.DecimalField(max_digits=2, decimal_places=0, default=0)
+    stat_INT = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_REF = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_TECH = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_COOL = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_ATTR = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_LUCK = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_MA = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_BODY = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
+    stat_EMP = models.DecimalField(max_digits=2, decimal_places=0, default=2,
+                                    validators=[MinValueValidator(2), MaxValueValidator(10)])
     MA_Run = models.DecimalField(max_digits=3, decimal_places=0,
                                  blank=True, null=True)
     MA_Leap = models.DecimalField(max_digits=3, decimal_places=0,
                                   blank=True, null=True)
     MA_Lift = models.DecimalField(max_digits=3, decimal_places=0,
                                   blank=True, null=True)
+    EMP_Humanity = models.DecimalField(max_digits=3, decimal_places=0,
+                                       blank=True, null=True)
+    BODY_Save_Nr = models.DecimalField(max_digits=3, decimal_places=0,
+                                       blank=True, null=True)
+    BODY_BTM = models.DecimalField(max_digits=3, decimal_places=0,
+                                       blank=True, null=True)
+
     # Special Skills
     SKILL_Authority = models.DecimalField(max_digits=2, decimal_places=0, default=0)
     SKILL_Char_Leadership = models.DecimalField(max_digits=2, decimal_places=0, default=0)

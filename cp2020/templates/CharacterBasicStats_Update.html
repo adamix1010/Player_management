@@ -16,13 +16,67 @@
     </section>
     <section class="cyberpunk black">
         <label for="number">Points left:</label>
-        <p id="number"></p>
-      <div style="display:inline-block;vertical-align:top;">
+        <p id="number" style="max-width: 470px"></p>
+<div style="display:inline-block;vertical-align:top;">
       <form id='p-form' style="max-width: 500px" method="post" enctype="multipart/form-data" >
          {% csrf_token %}
-         {{ form }}
-        <button type="submit" class="cyberpunk red">SUBMIT_</button>
-       </div>
+         {{ form.non_field_errors }}
+    <table>
+    <tr>
+    <td>
+    {{ form.stat_INT.errors }}
+    <label for="{{ form.stat_INT.id_for_label}}">Stat INT:</label>
+    {{ form.stat_INT }}
+    </td>
+   <td>
+    {{ form.stat_REF.errors }}
+    <label for="{{ form.stat_REF.id_for_label}}">Stat REF:</label>
+    {{ form.stat_REF }}
+   </td>
+   <td>
+    {{ form.stat_TECH.errors }}
+    <label for="{{ form.stat_TECH.id_for_label}}">stat_TECH:</label>
+    {{ form.stat_TECH }}
+   </td>
+    </tr>
+    <tr>
+    <td>
+    {{ form.stat_COOL.errors }}
+    <label for="{{ form.stat_COOL.id_for_label}}">stat_COOL:</label>
+    {{ form.stat_COOL }}
+    </td>
+   <td>
+    {{ form.stat_ATTR.errors }}
+    <label for="{{ form.stat_ATTR.id_for_label}}">stat_ATTR:</label>
+    {{ form.stat_ATTR }}
+   </td>
+   <td>
+    {{ form.stat_LUCK.errors }}
+    <label for="{{ form.stat_LUCK.id_for_label}}">stat_LUCK:</label>
+    {{ form.stat_LUCK }}
+   </td>
+    </tr>
+    <tr>
+    <td>
+    {{ form.stat_MA.errors }}
+    <label for="{{ form.stat_MA.id_for_label}}">stat_MA:</label>
+    {{ form.stat_MA }}
+    </td>
+   <td>
+    {{ form.stat_BODY.errors }}
+    <label for="{{ form.stat_BODY.id_for_label}}">stat_BODY:</label>
+    {{ form.stat_BODY }}
+   </td>
+   <td>
+    {{ form.stat_EMP.errors }}
+    <label for="{{ form.stat_EMP.id_for_label}}">stat_EMP:</label>
+    {{ form.stat_EMP }}
+   </td>
+    </tr>
+    </table>
+    <button type="submit" class="cyberpunk red">SUBMIT_</button>
+      </form>
+ </div>
       <div style="display:inline-block;">
           <img src="{% static 'AI_Picture.png' %}"  alt="" height="200" width="200" />
       </div>
@@ -31,7 +85,7 @@
             Welcome {{ request.user.username }}. Here you can define stats for {{ characterdetail.name }}
         </p>
       </div>
-    </form>
+
     </section>
         <script src="{% static 'CharacterBasicStats.js'%}"defer></script>
 {% endblock content %}
