@@ -16,60 +16,60 @@
     </section>
     <section class="cyberpunk black">
         <label for="number">Points left:</label>
-        <p id="number" style="max-width: 470px"></p>
+        <p id="number" style="max-width: 600px"></p>
 <div style="display:inline-block;vertical-align:top;">
-      <form id='p-form' style="max-width: 500px" method="post" enctype="multipart/form-data" >
+      <form id='p-form' style="max-width: 600px" method="post" enctype="multipart/form-data" >
          {% csrf_token %}
          {{ form.non_field_errors }}
     <table>
     <tr>
     <td>
     {{ form.stat_INT.errors }}
-    <label for="{{ form.stat_INT.id_for_label}}">Stat INT:</label>
+    <label for="{{ form.stat_INT.id_for_label}}" style="font-size: 0.9rem">Stat INT:</label>
     {{ form.stat_INT }}
     </td>
    <td>
     {{ form.stat_REF.errors }}
-    <label for="{{ form.stat_REF.id_for_label}}">Stat REF:</label>
+    <label for="{{ form.stat_REF.id_for_label}}" style="font-size: 0.9rem">Stat REF:</label>
     {{ form.stat_REF }}
    </td>
    <td>
     {{ form.stat_TECH.errors }}
-    <label for="{{ form.stat_TECH.id_for_label}}">stat_TECH:</label>
+    <label for="{{ form.stat_TECH.id_for_label}}" style="font-size: 0.9rem">stat_TECH:</label>
     {{ form.stat_TECH }}
    </td>
     </tr>
     <tr>
     <td>
     {{ form.stat_COOL.errors }}
-    <label for="{{ form.stat_COOL.id_for_label}}">stat_COOL:</label>
+    <label for="{{ form.stat_COOL.id_for_label}}" style="font-size: 0.9rem">stat_COOL:</label>
     {{ form.stat_COOL }}
     </td>
    <td>
     {{ form.stat_ATTR.errors }}
-    <label for="{{ form.stat_ATTR.id_for_label}}">stat_ATTR:</label>
+    <label for="{{ form.stat_ATTR.id_for_label}}" style="font-size: 0.9rem">stat_ATTR:</label>
     {{ form.stat_ATTR }}
    </td>
    <td>
     {{ form.stat_LUCK.errors }}
-    <label for="{{ form.stat_LUCK.id_for_label}}">stat_LUCK:</label>
+    <label for="{{ form.stat_LUCK.id_for_label}}" style="font-size: 0.9rem">stat_LUCK:</label>
     {{ form.stat_LUCK }}
    </td>
     </tr>
     <tr>
     <td>
     {{ form.stat_MA.errors }}
-    <label for="{{ form.stat_MA.id_for_label}}">stat_MA:</label>
+    <label for="{{ form.stat_MA.id_for_label}}" style="font-size: 0.9rem">stat_MA:</label>
     {{ form.stat_MA }}
     </td>
    <td>
     {{ form.stat_BODY.errors }}
-    <label for="{{ form.stat_BODY.id_for_label}}">stat_BODY:</label>
+    <label for="{{ form.stat_BODY.id_for_label}}" style="font-size: 0.9rem">stat_BODY:</label>
     {{ form.stat_BODY }}
    </td>
    <td>
     {{ form.stat_EMP.errors }}
-    <label for="{{ form.stat_EMP.id_for_label}}">stat_EMP:</label>
+    <label for="{{ form.stat_EMP.id_for_label}}" style="font-size: 0.9rem">stat_EMP:</label>
     {{ form.stat_EMP }}
    </td>
     </tr>

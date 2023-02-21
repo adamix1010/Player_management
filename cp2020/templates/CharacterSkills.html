@@ -1,0 +1,25 @@
+{% extends "baseCP.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+    <hr>
+    <h1 class="cyberpunk">Choose skills for character</h1>
+    <section class="cyberpunk black">
+      <div style="display:inline-block;">
+          <img src="{% static 'AI_Picture.png' %}"  alt="" height="150" width="150" />
+      </div>
+      <div style="display:inline-block;vertical-align:top;">
+        <p id="info-text" class="cyberpunk inverse scannedv">
+            Welcome {{ request.user.username }}. Here you can define stats for {{ characterdetail.name }}
+        </p>
+      </div>
+      <div >
+        <label for="number">Points left:</label>
+        <p id="number" style="max-width: 600px"></p>
+         {% csrf_token %}
+         {% crispy form %}
+    <button type="submit" class="cyberpunk red">SUBMIT_</button></div>
+
+    </section>
+        <script src="{% static 'CharacterBasicStats.js'%}"defer></script>
+{% endblock content %}

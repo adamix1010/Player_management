@@ -1,7 +1,7 @@
 from django.shortcuts import render,  reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView, UpdateView
-from .forms import BasicCharacterInfoForm, BasicCharacterStatsForm
+from .forms import BasicCharacterInfoForm, BasicCharacterStatsForm, CharacterSkillForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import CharacterDetail
 
@@ -38,3 +38,13 @@ class BasicCharacterStatsView(LoginRequiredMixin, UpdateView):
         instance.BODY_Save_Nr = instance.stat_BODY
         instance.save()
         return super(BasicCharacterStatsView, self).form_valid(form)
+
+
+class CharacterSkillsView(LoginRequiredMixin, UpdateView):
+    template_name = "CharacterSkills.html"
+    queryset = CharacterDetail.objects.all()
+    form_class = CharacterSkillForm
+
+
+    def get_success_url(self):
+        return reverse("landing-page")
