@@ -16,10 +16,12 @@
       <div >
         <label for="number">Points left:</label>
         <p id="number" style="max-width: 600px"></p>
+         <form form id='p-form' method="post" enctype="multipart/form-data">
          {% csrf_token %}
          {% crispy form %}
-    <button type="submit" class="cyberpunk red">SUBMIT_</button></div>
+         <button type="submit" class="cyberpunk red">SUBMIT_</button>
+         </form>
+        </div>
 
     </section>
-        <script src="{% static 'CharacterBasicStats.js'%}"defer></script>
 {% endblock content %}

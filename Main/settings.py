@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'users',
     'cp2020',
     'crispy_forms',
-    'crispy_bootstrap5',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -132,5 +132,5 @@ AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = "/login"
 LOGIN_REDIRECT_URL = 'landing-page'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
