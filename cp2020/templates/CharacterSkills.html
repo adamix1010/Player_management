@@ -16,7 +16,7 @@
       <div >
         <label for="number">Points left:</label>
         <p id="number" style="max-width: 600px"></p>
-         <form form id='p-form' method="post" enctype="multipart/form-data">
+         <form id='p-form' method="post" enctype="multipart/form-data">
          {% csrf_token %}
          {% crispy form %}
          <button type="submit" class="cyberpunk red">SUBMIT_</button>

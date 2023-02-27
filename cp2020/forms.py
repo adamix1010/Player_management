@@ -2,7 +2,7 @@ from django import forms
 from .models import CharacterDetail
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, ButtonHolder
-from crispy_forms.bootstrap import Field, InlineRadios, TabHolder, Tab
+from crispy_forms.bootstrap import TabHolder, Tab
 
 
 class BasicCharacterInfoForm(forms.ModelForm):
@@ -32,7 +32,6 @@ class BasicCharacterStatsForm(forms.ModelForm):
 
 
 class CharacterSkillForm(forms.ModelForm):
-
     class Meta:
         model = CharacterDetail
 
@@ -147,7 +146,7 @@ class CharacterSkillForm(forms.ModelForm):
             "TECH_Play_Instrument",
             "TECH_Weaponsmith",
 
-       )
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -178,7 +177,6 @@ class CharacterSkillForm(forms.ModelForm):
                               Column("ATRR_Wardrobe_Style", css_class='form-group col-md-2 mb-0'),
                               css_class='form-row',
 
-
                           )),
 
                       Tab('Body',
@@ -207,32 +205,44 @@ class CharacterSkillForm(forms.ModelForm):
                               Column("INT_Biology", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Botany", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Chemistry", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("INT_Composition", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Diagnose_Illness", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Education", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Expert", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Gamble", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Geology", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("INT_Hide", css_class='form-group col-md-2 mb-0'),
                               Column("INT_History", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Language_1", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Language_1_Type", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Language_2", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Language_2_Type", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("INT_Language_3", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Language_3_Type", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Library_Search", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Mathematics", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Physics", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Programming", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("INT_Track", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Stock_Market", css_class='form-group col-md-2 mb-0'),
                               Column("INT_System_Knowledge", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Teaching", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Wilderness_Survival", css_class='form-group col-md-2 mb-0'),
                               Column("INT_Zoology", css_class='form-group col-md-2 mb-0'),
-                              css_class='form-row',
-                          )),
+                              css_class='form-row'
+                          ), ),
 
                       Tab('Reflex',
                           Row(
@@ -242,28 +252,70 @@ class CharacterSkillForm(forms.ModelForm):
                               Column("REF_Dance", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Dodge_Escape", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Driving", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("REF_Fencing", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Handgun", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Heavy_Weapons", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Martial_Art_1", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Martial_Art_1_Type", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Martial_Art_2", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("REF_Martial_Art_2_Type", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Martial_Art_3", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Martial_Art_3_Type", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Melee", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Motorcycle", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Operate_Hvy_Machinery", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("REF_Pilot_Gyro", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Pilot_Fixed_Wing", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Pilot_Dirigible", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Pilot_Vect_Thrust", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Rifle", css_class='form-group col-md-2 mb-0'),
                               Column("REF_Stealth", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row'
+                          ),
+                          Row(
                               Column("REF_Submachinegun", css_class='form-group col-md-2 mb-0'),
                               css_class='form-row',
                           )),
+                      Tab('Tech',
+                          Row(
+                              Column("TECH_Aero_Tech", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_AV_Tech", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Basic_Tech", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Cryotank_Operation", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Cyber_Tech", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Demolitions", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row',
+                          ),
+                          Row(
+                              Column("TECH_Disguise", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Electronics", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Elect_Security", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_First_Aid", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Forgery", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Gyro_Tech", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row',
+                          ),
+                          Row(
+                              Column("TECH_Paint_or_Draw", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Photo_Film", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Pharmacuticals", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Pick_Lock", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Play_Instrument", css_class='form-group col-md-2 mb-0'),
+                              Column("TECH_Weaponsmith", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row',
+                          ),
+                          ),
                       ),
             ButtonHolder(
-                Submit('save', 'Save'),)
+                Submit('save', 'Save'),
+            ),
         )

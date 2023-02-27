@@ -20,7 +20,7 @@
          <div id="img-box"></div>
       <form id='p-form' style="max-width: 500px" method="post" enctype="multipart/form-data" >
          {% csrf_token %}
-         {{ form }}
+         {{ form.as_table }}
         <button type="submit" class="cyberpunk red">SUBMIT_</button>
        </div>
       <div style="display:inline-block;">
