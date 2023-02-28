@@ -1,6 +1,6 @@
 from django.shortcuts import render,  reverse
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, ListView
 from .forms import BasicCharacterInfoForm, BasicCharacterStatsForm, CharacterSkillForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import CharacterDetail
@@ -48,3 +48,12 @@ class CharacterSkillsView(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse("landing-page")
+
+class CharacterList(LoginRequiredMixin, ListView):
+    template_name = "CharacterList.html"
+    context_object_name = 'myCharacters'
+
+    def get_queryset(self):
+        return CharacterDetail.objects.filter(
+            user =self.request.user
+        )

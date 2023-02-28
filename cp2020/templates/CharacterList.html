@@ -1,0 +1,35 @@
+{% extends "baseCP.html" %}
+
+{% block content %}
+
+    <hr>
+    <h1 class="cyberpunk">Create a new character</h1>
+    <section class="cyberpunk">
+        {% load static %}
+        <div style="display:inline-block;vertical-align:top;">
+            <img src="{% static 'AI_Picture.png' %}"  alt="" height="200" width="200" />
+         </div>
+        <div style="display:inline-block;">
+        <p class="cyberpunk inverse">
+            Welcome stranger. Here you can create your very own Cyberpunk 2020 character<br>
+        </p>
+        </div>
+    </section>
+    <section class="cyberpunk black">
+   <div class="flex flex-wrap -m-4" >
+    {% for CharacterDetail in myCharacters %}
+       <div class="p-4 lg:w-1/4 md:w-full">
+          <div class="flex-grow"style="max-width: 200px">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                {{ CharacterDetail.name }}
+            </h2>
+            <p class="leading-relaxed text-base">
+                {{ CharacterDetail.role }}
+            </p>
+          </div>
+       </div>
+    {% endfor %}
+       </div>
+    </section>
+        <script src="{% static 'CharacterBasicControl.js'%}"defer></script>
+{% endblock content %}
