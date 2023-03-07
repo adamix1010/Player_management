@@ -1,6 +1,6 @@
 from django.shortcuts import render,  reverse
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic import CreateView, UpdateView, ListView
+from django.views.generic import CreateView, UpdateView, ListView, DetailView
 from .forms import BasicCharacterInfoForm, BasicCharacterStatsForm, CharacterSkillForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import CharacterDetail
@@ -57,3 +57,9 @@ class CharacterList(LoginRequiredMixin, ListView):
         return CharacterDetail.objects.filter(
             user =self.request.user
         )
+
+
+class CharacterDetailView(LoginRequiredMixin, DetailView):
+    template_name = "CharacterDetail.html"
+    queryset = CharacterDetail.objects.all()
+    context_object_name = 'myCharacter'

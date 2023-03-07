@@ -1,0 +1,98 @@
+{% extends "baseCP.html" %}
+
+{% block content %}
+{% load static %}
+    <section class="cyberpunk black">
+    <a href = " {% url 'cp2020:CharList' %}" class="mt-3 text-green-500 inline-flex items-center"> Back
+    </a>
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                {{ myCharacter.name }}
+            </h2>
+            <p class="leading-relaxed text-base">
+                {{ myCharacter.role }}
+            </p>
+      <div style="display:inline-block;vertical-align:top;">
+        <table style="width:400px">
+
+                 <td>
+                    <label for="INT" style="font-size: 0.9rem">stat_INT:</label>
+                         <p itemid="INT" class="leading-relaxed text-base">
+                            {{ myCharacter.stat_INT }}
+                        </p>
+                     </td>
+                    <td>
+                    <label for="REF" style="font-size: 0.9rem">stat_REF:</label>
+                        <p itemid="REF" class="leading-relaxed text-base">
+                             {{ myCharacter.stat_REF }}
+                         </p>
+                     </td>
+                    <td>
+                    <label for="TECH" style="font-size: 0.9rem">stat_TECH:</label>
+                        <p itemid="TECH" class="leading-relaxed text-base">
+                              {{ myCharacter.stat_TECH }}
+                         </p>
+                     </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <label for="COOL" style="font-size: 0.9rem">stat_COOL:</label>
+                        <p itemid="COOL" class="leading-relaxed text-base">
+                                {{ myCharacter.stat_COOL }}
+                         </p>
+                     </td>
+                    <td>
+                    <label for="ATTR" style="font-size: 0.9rem">stat_ATTR:</label>
+                        <p itemid="ATTR" class="leading-relaxed text-base">
+                                {{ myCharacter.stat_ATTR }}
+                         </p>
+                     </td>
+                    <td>
+                    <label for="LUCK" style="font-size: 0.9rem">stat_LUCK:</label>
+                        <p itemid="LUCK" class="leading-relaxed text-base">
+                                {{ myCharacter.stat_LUCK }}
+                        </p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <label for="MA" style="font-size: 0.9rem">stat_MA:</label>
+                        <p itemid="MA" class="leading-relaxed text-base">
+                                {{ myCharacter.stat_MA }}
+                         </p>
+                     </td>
+                    <td>
+                    <label for="BODY" style="font-size: 0.9rem">stat_BODY:</label>
+                        <p itemid="BODY" class="leading-relaxed text-base">
+                                {{ myCharacter.stat_BODY }}
+                         </p>
+                     </td>
+                    <td>
+                    <label for="EMP" style="font-size: 0.9rem">stat_EMP:</label>
+                        <p itemid="EMP" class="leading-relaxed text-base">
+                                {{ myCharacter.stat_EMP }}
+                        </p>
+                    </td>
+                    </tr>
+        </table>
+      </div>
+<div style="display:inline-block;">
+          <img src="{% static 'AI_Picture.png' %}"  alt="" height="200" width="200" />
+      </div>
+      <div style="display:inline-block;vertical-align:top;">
+        <p id="info-text" class="cyberpunk inverse scannedv">
+            Welcome {{ request.user.username }}. Here you can see stats for {{ myCharacter.name }}
+        </p>
+        <a>
+      </div>
+      <div>
+      <a href = " {% url 'cp2020:BaseStats' myCharacter.pk %}" class="mt-3 text-green-500 inline-flex items-center">
+                                Edit
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+      </a>
+      </div>
+
+    </section>
+{% endblock content %}
+

@@ -313,6 +313,27 @@ class CharacterSkillForm(forms.ModelForm):
                               Column("TECH_Weaponsmith", css_class='form-group col-md-2 mb-0'),
                               css_class='form-row',
                           ),
+                          Row(
+                              Column("TECH_Cyberdeck_Design", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row',
+                          ),
+                          ),
+                      Tab('Empathy',
+                          Row(
+                              Column("EMPATHY_Human_Perception", css_class='form-group col-md-2 mb-0'),
+                              Column("EMPATHY_Interview", css_class='form-group col-md-2 mb-0'),
+                              Column("EMPATHY_Leadership", css_class='form-group col-md-2 mb-0'),
+                              Column("EMPATHY_Seduction", css_class='form-group col-md-2 mb-0'),
+                              Column("EMPATHY_Social", css_class='form-group col-md-2 mb-0'),
+                              Column("EMPATHY_Persuasion", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row',
+
+                          ),
+                          Row(
+                              Column("EMPATHY_Perform", css_class='form-group col-md-2 mb-0'),
+                              css_class='form-row',
+
+                          )
                           ),
                       ),
             ButtonHolder(
