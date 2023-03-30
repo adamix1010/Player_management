@@ -20,16 +20,12 @@ console.log(csrf);
 let max_stats = 60;
 number.innerText = max_stats;
 
-function add_all(updatedStatInput) {
+function add_all() {
   let sum = 0;
   for (const key in stats) {
     if (Object.hasOwnProperty.call(stats, key)) {
       const statInput = stats[key];
-      if (statInput === updatedStatInput) {
-        sum += Number(updatedStatInput.value);
-      } else {
-        sum += Number(statInput.value);
-      }
+      sum += Number(statInput.value);
     }
   }
   return sum;
@@ -42,7 +38,7 @@ function handleStatInputChange(inputElement) {
   if (Number(inputElement.value) >= 10) {
     inputElement.value = 10;
   }
-  max_stats = 60 - add_all(inputElement);
+  max_stats = 60 - add_all();
   if (max_stats < 0) {
     info.innerText = 'You used too much points';
   } else {
@@ -50,6 +46,7 @@ function handleStatInputChange(inputElement) {
     info.innerText = statInfo;
   }
   number.innerText = max_stats;
+
 }
 
 for (const key in stats) {
@@ -57,6 +54,7 @@ for (const key in stats) {
     const statInput = stats[key];
     statInput.addEventListener('change', () => {
       handleStatInputChange(statInput);
+      console.log(max_stats);
     });
   }
 }
