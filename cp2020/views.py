@@ -27,7 +27,7 @@ class BasicCharacterStatsView(LoginRequiredMixin, UpdateView):
 
 
     def get_success_url(self):
-        return reverse("cp2020:Skills",kwargs={'pk' : self.object.pk})
+        return reverse("cp2020:Skills", kwargs={'pk' : self.object.pk})
 
     def form_valid(self, form):
         instance = form.save(commit=False)

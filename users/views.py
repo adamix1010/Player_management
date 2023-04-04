@@ -9,4 +9,4 @@ class SignupView(CreateView):
     form_class = UserCreationForm
 
     def get_success_url(self):
-        return reverse("login")
+        return reverse("landing-page")
